@@ -2,26 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-swidth, initial-scale=1.0" />
-  <title> STRATA - Le cadre de pilotage pour une entreprise responsable</title>
-
-  <meta name="description" content="STRATA simplifie la conformité CSRD et le reporting ESG pour les PME européennes. Intelligence artificielle, automatisation, clarté." />
-  <meta property="og:title" content="STRATA - ESG Intelligence Platform" />
-  <meta property="og:description" content="La plateforme ESG pensée pour les PME soumises à la CSRD. Rejoignez la liste d'attente." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRATA — The operating system for sustainable business</title>
+  <meta name="description" content="STRATA automatise votre conformité CSRD et votre reporting ESG. Analyse IA, scoring ESRS, rapport PDF en moins de 3 minutes. Pour les PME européennes." />
+  <meta property="og:title" content="STRATA — ESG Intelligence Platform" />
+  <meta property="og:description" content="La conformité CSRD automatisée pour les PME. Ce que les cabinets facturent 30 000€, disponible pour 39€/mois." />
   <meta property="og:image" content="https://strata-esg.fr/og-image.png" />
   <meta property="og:url" content="https://strata-esg.fr" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="STRATA - The operating system for sustainable business" />
-  <meta name="twitter:description" content="La plateforme ESG pensée pour les PME soumises à la CSRD." />
-  <meta name="twitter:image" content="https://strata-esg.fr/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Syne:wght@600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@600;700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── Variables ─────────────────────────────── */
+    /* ─── Variables ─────────────────────────────────────────── */
     :root {
       --slate:      #0D1B2A;
       --slate-mid:  #1A2D42;
@@ -32,24 +28,24 @@
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-ui:      'Syne', sans-serif;
       --font-body:    'DM Sans', sans-serif;
+      --max-w: 1140px;
+      --section-pad: 96px 0;
     }
 
-    /* ─── Reset ─────────────────────────────────── */
+    /* ─── Reset ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--slate);
+      background: var(--slate);
       color: var(--cream);
       font-family: var(--font-body);
       font-weight: 300;
       line-height: 1.8;
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ─── Strate texture (fines lignes horizontales) ── */
+    /* Strate texture */
     body::before {
       content: '';
       position: fixed;
@@ -58,31 +54,114 @@
         -1.5deg,
         transparent,
         transparent 28px,
-        rgba(201, 169, 110, 0.04) 28px,
-        rgba(201, 169, 110, 0.04) 29px
+        rgba(201, 169, 110, 0.035) 28px,
+        rgba(201, 169, 110, 0.035) 29px
       );
       pointer-events: none;
       z-index: 0;
     }
 
-    /* ─── Layout ─────────────────────────────────── */
-    .wrapper {
+    /* ─── Layout helpers ─────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
       position: relative;
       z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
-    /* ─── Header / Nav ───────────────────────────── */
-    header {
-      padding: 40px 0 0;
+    .section { padding: var(--section-pad); }
+
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    h2.section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--stone);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ─── Buttons ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      padding: 14px 28px;
+      transition: opacity 0.2s, transform 0.15s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary { background: var(--gold); color: var(--slate); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(242, 237, 228, 0.25);
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      background: rgba(13, 27, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+      transition: padding 0.3s;
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
     }
 
     .stratemark {
@@ -94,49 +173,73 @@
 
     .stratemark span {
       display: block;
-      height: 3px;
+      height: 2.5px;
       background: var(--gold);
       border-radius: 2px;
     }
 
-    .stratemark span:nth-child(1) { width: 36px; opacity: 1; }
-    .stratemark span:nth-child(2) { width: 25px; opacity: 0.7; }
-    .stratemark span:nth-child(3) { width: 14px; opacity: 0.4; }
+    .stratemark span:nth-child(1) { width: 30px; opacity: 1; }
+    .stratemark span:nth-child(2) { width: 21px; opacity: 0.7; }
+    .stratemark span:nth-child(3) { width: 12px; opacity: 0.4; }
 
     .wordmark {
       font-family: var(--font-display);
       font-weight: 500;
-      font-size: 1.15rem;
+      font-size: 1rem;
       letter-spacing: 8px;
       text-transform: uppercase;
       color: var(--cream);
     }
 
-    /* ─── Main ───────────────────────────────────── */
-    main {
-      flex: 1;
+    .nav-links {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 0 60px;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
     }
 
-    /* Badge */
-    .badge {
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cta { margin-left: 16px; padding: 10px 20px; font-size: 0.58rem; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 4px;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--signal);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    .badge::before {
-      content: '';
-      display: block;
+    .hero-badge .dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -149,209 +252,713 @@
       50%       { opacity: 0.4; transform: scale(0.8); }
     }
 
-    /* Headline */
-    h1 {
+    #hero h1 {
       font-family: var(--font-display);
       font-weight: 300;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      line-height: 1.15;
-      color: var(--cream);
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      line-height: 1.1;
       margin-bottom: 28px;
     }
 
-    h1 em {
+    #hero h1 em {
       font-style: italic;
       color: var(--gold);
     }
 
-    /* Sub */
-    .sub {
-      font-size: 1rem;
+    .hero-sub {
+      font-size: 1.05rem;
       color: var(--stone);
       max-width: 480px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
       line-height: 1.75;
     }
 
-    .sub strong {
-      color: var(--cream);
-      font-weight: 400;
+    .hero-sub strong { color: var(--cream); font-weight: 400; }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
     }
 
-    /* ─── Waitlist form ──────────────────────────── */
-    .waitlist {
+    .hero-proof {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--stone);
+    }
+
+    .hero-proof::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: rgba(83, 104, 120, 0.5);
+    }
+
+    /* Hero mockup */
+    .hero-mockup {
       background: var(--slate-mid);
-      border: 1px solid rgba(201, 169, 110, 0.18);
-      border-radius: 8px;
-      padding: 32px;
-      margin-bottom: 48px;
+      border: 1px solid rgba(201, 169, 110, 0.15);
+      border-radius: 12px;
+      padding: 28px;
+      position: relative;
     }
 
-    .waitlist-label {
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(83, 104, 120, 0.2);
+    }
+
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mockup-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(83, 104, 120, 0.3);
+    }
+
+    .mockup-title {
       font-family: var(--font-ui);
       font-size: 0.6rem;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: block;
+      color: var(--stone);
     }
 
-    .waitlist p {
-      font-size: 0.9rem;
-      color: var(--stone);
+    .score-display {
+      text-align: center;
       margin-bottom: 24px;
     }
 
-    .form-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      min-width: 200px;
-      background: var(--slate);
-      border: 1px solid rgba(201, 169, 110, 0.25);
-      border-radius: 4px;
-      padding: 12px 16px;
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-row input[type="email"]::placeholder {
-      color: var(--stone);
-    }
-
-    .form-row input[type="email"]:focus {
-      border-color: var(--gold);
-    }
-
-    .form-row button {
-      background: var(--gold);
-      color: var(--slate);
-      border: none;
-      border-radius: 4px;
-      padding: 12px 28px;
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .form-row button:hover { opacity: 0.85; transform: translateY(-1px); }
-    .form-row button:active { transform: translateY(0); }
-
-    .form-note {
-      margin-top: 12px;
-      font-size: 0.75rem;
-      color: var(--stone);
-    }
-
-    /* Success state */
-    .form-success {
-      display: none;
-      align-items: center;
-      gap: 12px;
-      color: var(--signal);
-      font-size: 0.9rem;
-    }
-
-    .form-success.visible { display: flex; }
-
-    /* ─── Stats bar ──────────────────────────────── */
-    .stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: 64px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(201, 169, 110, 0.12);
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .stat-number {
+    .score-number {
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: 4rem;
       font-weight: 300;
       color: var(--gold);
       line-height: 1;
     }
 
-    .stat-label {
+    .score-label {
       font-family: var(--font-ui);
-      font-size: 0.58rem;
+      font-size: 0.55rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 6px;
+    }
+
+    .score-bar-row {
+      margin-bottom: 10px;
+    }
+
+    .score-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--stone);
+      margin-bottom: 5px;
+    }
+
+    .score-bar-label span:last-child { color: var(--cream); }
+
+    .score-bar-track {
+      height: 4px;
+      background: rgba(83, 104, 120, 0.2);
+      border-radius: 2px;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--signal));
+    }
+
+    .mockup-footer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(83, 104, 120, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mockup-time {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--signal);
+    }
+
+    .mockup-badge {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--slate);
+      background: var(--gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    /* ─── TRUST BAR ──────────────────────────────────────────── */
+    #trust {
+      padding: 32px 0;
+      border-top: 1px solid rgba(83, 104, 120, 0.15);
+      border-bottom: 1px solid rgba(83, 104, 120, 0.15);
+    }
+
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .trust-label {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--stone);
+      flex-shrink: 0;
+    }
+
+    .trust-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .trust-stat-number {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .trust-stat-label {
+      font-family: var(--font-ui);
+      font-size: 0.52rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--stone);
     }
 
-    /* ─── Features teaser ────────────────────────── */
-    .features {
-      margin-bottom: 64px;
+    /* ─── PROBLEM ────────────────────────────────────────────── */
+    #problem { background: var(--slate-mid); }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .features-title {
-      font-family: var(--font-ui);
-      font-size: 0.6rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--stone);
-      margin-bottom: 24px;
-    }
-
-    .feature-list {
-      list-style: none;
+    .problem-cards {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      font-size: 0.9rem;
-      color: var(--stone);
-      line-height: 1.6;
+    .problem-card {
+      background: rgba(13, 27, 42, 0.5);
+      border: 1px solid rgba(83, 104, 120, 0.2);
+      border-radius: 8px;
+      padding: 24px;
     }
 
-    .feature-list li::before {
-      content: '';
+    .problem-card-icon {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 10px;
       display: block;
-      width: 18px;
+    }
+
+    .problem-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .problem-card p {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    .problem-card.highlight {
+      border-color: rgba(201, 169, 110, 0.3);
+      background: rgba(201, 169, 110, 0.05);
+    }
+
+    .problem-card.highlight .problem-card-icon { color: var(--gold); }
+
+    /* ─── SOLUTION ───────────────────────────────────────────── */
+    #solution { }
+
+    .solution-header {
+      max-width: 640px;
+      margin-bottom: 64px;
+    }
+
+    .solution-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 64px;
+    }
+
+    .step {
+      background: var(--slate-mid);
+      padding: 36px 28px;
+      position: relative;
+    }
+
+    .step:first-child { border-radius: 8px 0 0 8px; }
+    .step:last-child  { border-radius: 0 8px 8px 0; }
+
+    .step-number {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 20px;
+    }
+
+    .step-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      filter: grayscale(0.3);
+    }
+
+    .step h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    .step-connector {
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      z-index: 2;
+    }
+
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: -3px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid var(--gold);
+      border-right: 1px solid var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .solution-result {
+      background: var(--slate-mid);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      border-radius: 8px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .result-text h3 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .result-text p {
+      font-size: 0.9rem;
+      color: var(--stone);
+    }
+
+    .result-metrics {
+      display: flex;
+      gap: 40px;
+    }
+
+    .result-metric { text-align: center; }
+
+    .result-metric-number {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .result-metric-label {
+      font-family: var(--font-ui);
+      font-size: 0.5rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 6px;
+    }
+
+    /* ─── FEATURES ───────────────────────────────────────────── */
+    #features { background: var(--slate-mid); }
+
+    .features-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .feature {
+      background: var(--slate);
+      padding: 36px 28px;
+      transition: background 0.2s;
+    }
+
+    .feature:hover { background: rgba(13, 27, 42, 0.7); }
+
+    .feature:nth-child(1) { border-radius: 8px 0 0 0; }
+    .feature:nth-child(3) { border-radius: 0 8px 0 0; }
+    .feature:nth-child(4) { border-radius: 0 0 0 8px; }
+    .feature:nth-child(6) { border-radius: 0 0 8px 0; }
+
+    .feature-marker {
+      width: 32px;
       height: 2px;
       background: var(--gold);
-      margin-top: 11px;
+      margin-bottom: 20px;
+      border-radius: 1px;
+    }
+
+    .feature h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 0.82rem;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    /* ─── PRICING ────────────────────────────────────────────── */
+    #pricing { }
+
+    .pricing-intro {
+      max-width: 560px;
+      margin-bottom: 64px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 40px;
+    }
+
+    .plan {
+      background: var(--slate-mid);
+      padding: 40px 32px;
+      position: relative;
+    }
+
+    .plan:first-child { border-radius: 8px 0 0 8px; }
+    .plan:last-child  { border-radius: 0 8px 8px 0; }
+
+    .plan.featured {
+      background: rgba(201, 169, 110, 0.08);
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      margin: -1px;
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--slate);
+      font-family: var(--font-ui);
+      font-size: 0.5rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .plan-price {
+      margin-bottom: 28px;
+    }
+
+    .plan-price-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .plan-price-period {
+      font-size: 0.85rem;
+      color: var(--stone);
+      margin-left: 4px;
+    }
+
+    .plan-desc {
+      font-size: 0.85rem;
+      color: var(--stone);
+      margin-bottom: 28px;
+      line-height: 1.7;
+      min-height: 52px;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .plan-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+
+    .plan-features-list li::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 1.5px;
+      background: var(--gold);
+      margin-top: 9px;
       flex-shrink: 0;
     }
 
-    .feature-list li strong {
-      color: var(--cream);
-      font-weight: 400;
+    .plan-features-list li strong { color: var(--cream); font-weight: 400; }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 4px;
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    /* ─── Footer ─────────────────────────────────── */
+    .plan-cta-outline {
+      border: 1px solid rgba(83, 104, 120, 0.4);
+      color: var(--stone);
+    }
+
+    .plan-cta-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .plan-cta-primary {
+      background: var(--gold);
+      color: var(--slate);
+    }
+
+    .plan-cta-primary:hover { opacity: 0.85; }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--stone);
+    }
+
+    /* ─── FAQ ────────────────────────────────────────────────── */
+    #faq { background: var(--slate-mid); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 56px;
+    }
+
+    .faq-item {
+      border-top: 1px solid rgba(83, 104, 120, 0.2);
+      padding-top: 24px;
+    }
+
+    .faq-q {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .faq-a {
+      font-size: 0.85rem;
+      color: var(--stone);
+      line-height: 1.75;
+    }
+
+    .faq-a strong { color: var(--cream); font-weight: 400; }
+
+    /* ─── CTA FINAL ──────────────────────────────────────────── */
+    #cta-final {
+      text-align: center;
+      padding: 120px 0;
+    }
+
+    #cta-final h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #cta-final h2 em { font-style: italic; color: var(--gold); }
+
+    #cta-final p {
+      font-size: 1rem;
+      color: var(--stone);
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
     footer {
-      padding: 32px 0;
-      border-top: 1px solid rgba(83, 104, 120, 0.25);
+      padding: 48px 0;
+      border-top: 1px solid rgba(83, 104, 120, 0.15);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links-list a {
+      font-size: 0.85rem;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links-list a:hover { color: var(--cream); }
+
+    .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(83, 104, 120, 0.1);
       flex-wrap: wrap;
       gap: 12px;
     }
@@ -361,171 +968,496 @@
       color: var(--stone);
     }
 
-    .footer-links {
+    .footer-legal {
       display: flex;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .footer-links a {
+    .footer-legal a {
       font-family: var(--font-ui);
-      font-size: 0.58rem;
-      letter-spacing: 3px;
+      font-size: 0.52rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--stone);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--gold); }
+    .footer-legal a:hover { color: var(--gold); }
 
-    /* ─── Mobile ─────────────────────────────────── */
-    @media (max-width: 480px) {
-      header { padding-top: 28px; }
-      main { padding: 60px 0 40px; }
-      .waitlist { padding: 24px; }
-      .stats { gap: 24px; }
-      footer { flex-direction: column; align-items: flex-start; }
+    /* ─── Divider ────────────────────────────────────────────── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(201, 169, 110, 0.3);
+      margin: 0 auto 48px;
+    }
+
+    /* ─── Mobile ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      :root { --section-pad: 64px 0; }
+      .container { padding: 0 20px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-mockup { display: none; }
+      .problem-grid { grid-template-columns: 1fr; gap: 48px; }
+      .solution-steps { grid-template-columns: 1fr; gap: 2px; }
+      .step:first-child { border-radius: 8px 8px 0 0; }
+      .step:last-child  { border-radius: 0 0 8px 8px; }
+      .step-connector { display: none; }
+      .features-intro { grid-template-columns: 1fr; gap: 32px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 8px; }
+      .plan:first-child, .plan:last-child { border-radius: 8px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 540px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .result-metrics { gap: 24px; }
+      .trust-stats { gap: 24px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
 
-    <header>
-      <div class="stratemark" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <span class="wordmark">STRATA</span>
-    </header>
+  <!-- ─── NAV ─────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="stratemark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="wordmark">STRATA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Tarifs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="https://esg-optimizer.fr" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
+        Essayer gratuitement
+      </a>
+    </div>
+  </nav>
 
-    <main>
+  <!-- ─── HERO ────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <span class="dot"></span>
+            ESG Optimizer — Disponible maintenant
+          </span>
 
-      <span class="badge">En construction - Bientôt disponible</span>
+          <h1>
+            La conformité CSRD,<br />
+            <em>enfin accessible</em><br />
+            aux PME.
+          </h1>
 
-      <h1>
-        Le reporting ESG<br />
-        <em>sans la complexité.</em>
-      </h1>
+          <p class="hero-sub">
+            <strong>50 000 PME françaises</strong> doivent reporter leurs données ESG. Les cabinets facturent entre 5 000 et 30 000€ pour 4 à 6 semaines de travail. STRATA le fait en moins de 3 minutes, pour 39€/mois.
+          </p>
 
-      <p class="sub">
-        La CSRD entre en vigueur. <strong>Des milliers de PME européennes</strong> vont devoir
-        reporter leurs données ESG - sans équipe dédiée, sans outils adaptés.<br /><br />
-        STRATA est la plateforme qui change ça : conformité automatisée, intelligence IA,
-        reporting en quelques heures.
-      </p>
-
-      <div class="waitlist">
-        <span class="waitlist-label">Accès prioritaire</span>
-        <p>Soyez parmi les premiers à tester la plateforme. Accès beta gratuit pour les 100 premiers inscrits.</p>
-
-        <form
-          id="waitlist-form"
-          action="https://formspree.io/f/xlgzalbg"
-          method="POST"
-          onsubmit="handleSubmit(event)"
-        >
-          <div class="form-row">
-            <input
-              type="email"
-              name="email"
-              placeholder="votre@email.com"
-              required
-              autocomplete="email"
-            />
-            <button type="submit">Rejoindre</button>
+          <div class="hero-actions">
+            <a href="https://esg-optimizer.fr" class="btn btn-primary" target="_blank" rel="noopener">
+              Analyser mon rapport CSRD
+            </a>
+            <a href="#solution" class="btn btn-outline">
+              Comment ça marche
+            </a>
           </div>
-          <p class="form-note">Aucun spam. Désabonnement en un clic.</p>
-        </form>
 
-        <div class="form-success" id="form-success" role="status">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="8" stroke="#2AFFD6" stroke-width="1.5"/>
-            <path d="M5.5 9l2.5 2.5 4-4" stroke="#2AFFD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Vous êtes sur la liste. On vous contacte en priorité.
+          <p class="hero-proof">Gratuit pour les 3 premières analyses. Aucune carte requise.</p>
+        </div>
+
+        <div class="hero-mockup" aria-hidden="true">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup-title">ESG Optimizer — Rapport ESRS</span>
+          </div>
+
+          <div class="score-display">
+            <div class="score-number">74</div>
+            <div class="score-label">Score ESG Global / 100</div>
+          </div>
+
+          <div class="score-bar-row">
+            <div class="score-bar-label"><span>Environnement</span><span>81</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:81%"></div></div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label"><span>Social</span><span>68</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:68%"></div></div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label"><span>Gouvernance</span><span>72</span></div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:72%"></div></div>
+          </div>
+
+          <div class="mockup-footer">
+            <span class="mockup-time">Analyse terminee en 2 min 14 s</span>
+            <span class="mockup-badge">Rapport PDF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST BAR ─────────────────────────────────────────── -->
+  <section id="trust">
+    <div class="container">
+      <div class="trust-inner">
+        <span class="trust-label">En chiffres</span>
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <span class="trust-stat-number">50 000+</span>
+            <span class="trust-stat-label">PME concernees en France</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">12</span>
+            <span class="trust-stat-label">Standards ESRS analyses</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">&lt; 3 min</span>
+            <span class="trust-stat-label">Temps d'analyse</span>
+          </div>
+          <div class="trust-stat">
+            <span class="trust-stat-number">39€</span>
+            <span class="trust-stat-label">Par mois vs 5-30k€ cabinet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROBLEM ───────────────────────────────────────────── -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="problem-grid">
+        <div>
+          <span class="section-label">Le contexte</span>
+          <h2 class="section-title">La CSRD change <em>tout.</em><br /> Etes-vous pret ?</h2>
+          <p class="section-sub">
+            La directive europeenne CSRD oblige des milliers de PME a publier un rapport de durabilite detaille. Les penalites pour non-conformite peuvent atteindre plusieurs millions d'euros. Pourtant, les outils adaptes n'existent pas encore, ou coutent une fortune.
+          </p>
+        </div>
+
+        <div class="problem-cards">
+          <div class="problem-card highlight">
+            <span class="problem-card-icon">Cout</span>
+            <h3>5 000 a 30 000€ par diagnostic</h3>
+            <p>Le prix d'un cabinet specialise RSE pour un audit CSRD complet. Inaccessible pour la majorite des PME sans equipe dediee.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-card-icon">Delais</span>
+            <h3>4 a 6 semaines de prestation</h3>
+            <p>Le temps moyen pour un audit externe, avec des allers-retours incessants, quand la conformite est urgente.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-card-icon">Complexite</span>
+            <h3>12 standards ESRS a maitriser</h3>
+            <p>Le cadre reglementaire est dense, technique, et evolue constamment. Sans expert interne, impossible de s'y retrouver.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOLUTION ──────────────────────────────────────────── -->
+  <section id="solution" class="section">
+    <div class="container">
+      <div class="solution-header">
+        <span class="section-label">La solution</span>
+        <h2 class="section-title">Intelligence artificielle.<br /><em>Precision reglementaire.</em></h2>
+        <p class="section-sub">
+          ESG Optimizer analyse vos documents existants et produit un rapport de conformite CSRD structure, scoring inclus, en quelques minutes.
+        </p>
+      </div>
+
+      <div class="solution-steps">
+        <div class="step">
+          <span class="step-number">01</span>
+          <div class="step-icon"></div>
+          <h3>Deposez vos documents</h3>
+          <p>Rapport annuel, bilan RSE, politique interne, tableau de bord — tout format accepte (PDF, DOCX, XLSX).</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <span class="step-number">02</span>
+          <div class="step-icon"></div>
+          <h3>L'IA analyse et score</h3>
+          <p>GPT-4o lit, structure et evalue votre contenu sur les 12 standards ESRS avec un scoring precis sur 100.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step">
+          <span class="step-number">03</span>
+          <div class="step-icon"></div>
+          <h3>Rapport PDF en 3 minutes</h3>
+          <p>8 pages structurees : scoring global E/S/G, analyse par ESRS, ecarts identifies, recommandations prioritaires.</p>
         </div>
       </div>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-number">50 000+</span>
-          <span class="stat-label">PME concernées en France</span>
+      <div class="solution-result">
+        <div class="result-text">
+          <h3>Ce que vous obtenez</h3>
+          <p>Un rapport professionnel pret a etre presente a votre conseil d'administration, vos investisseurs, ou votre commissaire aux comptes.</p>
         </div>
-        <div class="stat">
-          <span class="stat-number">2025</span>
-          <span class="stat-label">Entrée en vigueur CSRD</span>
+        <div class="result-metrics">
+          <div class="result-metric">
+            <div class="result-metric-number">8</div>
+            <div class="result-metric-label">Pages de rapport</div>
+          </div>
+          <div class="result-metric">
+            <div class="result-metric-number">12</div>
+            <div class="result-metric-label">Standards ESRS</div>
+          </div>
+          <div class="result-metric">
+            <div class="result-metric-number">-97%</div>
+            <div class="result-metric-label">Vs cout cabinet</div>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-number">∞</span>
-          <span class="stat-label">Complexité sans outil</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ──────────────────────────────────────────── -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="features-intro">
+        <div>
+          <span class="section-label">Fonctionnalites</span>
+          <h2 class="section-title">Tout ce dont vous avez besoin pour la <em>conformite CSRD.</em></h2>
+        </div>
+        <p class="section-sub" style="align-self:flex-end;">
+          ESG Optimizer est le premier outil concu specifiquement pour les PME europeennes soumises a la CSRD. Pas de complexite inutile, que de la valeur.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Analyse multi-format</h3>
+          <p>PDF, DOCX, XLSX — deposez n'importe quel document existant. L'IA extrait et structure automatiquement les informations pertinentes.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Scoring ESRS sur 12 standards</h3>
+          <p>Evaluation granulaire sur chacun des 12 standards ESRS (E1 a E5, S1 a S4, G1). Identification precise des lacunes a combler.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Rapport PDF professionnel</h3>
+          <p>8 pages mises en page, brandes a votre entreprise, prets a etre partages avec votre direction, vos auditeurs, vos investisseurs.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Delta N/N-1</h3>
+          <p>Comparez votre progression annuelle. Visualisez clairement ce qui s'ameliore, ce qui stagne, et ou concentrer vos efforts.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Badge LinkedIn viral</h3>
+          <p>Partagez votre score ESG directement sur LinkedIn. Signalez votre engagement RSE a vos clients, partenaires et candidats.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-marker"></div>
+          <h3>Historique et dashboard</h3>
+          <p>Suivez l'evolution de votre conformite dans le temps. Acces a tous vos rapports anterieurs depuis votre espace personnel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRICING ───────────────────────────────────────────── -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="pricing-intro">
+        <span class="section-label">Tarifs</span>
+        <h2 class="section-title">Simple, transparent,<br /><em>sans surprise.</em></h2>
+        <p class="section-sub">Commencez gratuitement. Passez a un plan paye quand vous etes pret.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="plan">
+          <span class="plan-name">Decouverte</span>
+          <div class="plan-price">
+            <span class="plan-price-number">0€</span>
+            <span class="plan-price-period">pour toujours</span>
+          </div>
+          <p class="plan-desc">Testez la puissance d'ESG Optimizer sans engagement.</p>
+          <ul class="plan-features-list">
+            <li>3 analyses par mois</li>
+            <li>Scoring ESG global</li>
+            <li><strong>Rapport PDF 8 pages</strong></li>
+            <li>Acces au quick-check public</li>
+          </ul>
+          <a href="https://esg-optimizer.fr" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">
+            Commencer gratuitement
+          </a>
+        </div>
+
+        <div class="plan featured">
+          <span class="plan-badge">Le plus populaire</span>
+          <span class="plan-name">Essentiel</span>
+          <div class="plan-price">
+            <span class="plan-price-number">39€</span>
+            <span class="plan-price-period">/ mois</span>
+          </div>
+          <p class="plan-desc">Pour les PME qui veulent une conformite CSRD continue et professionnelle.</p>
+          <ul class="plan-features-list">
+            <li><strong>Analyses illimitees</strong></li>
+            <li>Scoring ESRS detaille (12 standards)</li>
+            <li>Delta N/N-1 inclus</li>
+            <li>Badge LinkedIn</li>
+            <li>Historique complet</li>
+            <li>Support email prioritaire</li>
+          </ul>
+          <a href="https://esg-optimizer.fr" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
+            Demarrer l'essai
+          </a>
+        </div>
+
+        <div class="plan">
+          <span class="plan-name">Pro / Enterprise</span>
+          <div class="plan-price">
+            <span class="plan-price-number">Sur devis</span>
+          </div>
+          <p class="plan-desc">Pour les cabinets, fonds, et ETI avec des besoins avances.</p>
+          <ul class="plan-features-list">
+            <li>Multi-entites</li>
+            <li><strong>Marque blanche disponible</strong></li>
+            <li>API access</li>
+            <li>Intégration ERP/SIRH</li>
+            <li>CSM dedie</li>
+            <li>SLA contractuel</li>
+          </ul>
+          <a href="mailto:contact@strata-esg.fr" class="plan-cta plan-cta-outline">
+            Nous contacter
+          </a>
         </div>
       </div>
 
-      <div class="features">
-        <p class="features-title">Ce qu'on prépare</p>
-        <ul class="feature-list">
-          <li>
-            <span><strong>Reporting CSRD automatisé</strong> - collecte, structuration et
-            génération des rapports conformes ESRS en quelques heures.</span>
-          </li>
-          <li>
-            <span><strong>Copilot IA ESG</strong> - répondez à vos questions de conformité
-            en langage naturel, sans consultant externe.</span>
-          </li>
-          <li>
-            <span><strong>Scope 3 Tracker</strong> - cartographiez et mesurez vos émissions
-            indirectes avec vos fournisseurs.</span>
-          </li>
-          <li>
-            <span><strong>Dashboard en temps réel</strong> - pilotez vos KPIs ESG comme
-            vous pilotez vos KPIs financiers.</span>
-          </li>
-        </ul>
+      <p class="pricing-note">Tous les prix sont HT. Annulation a tout moment. Donnees hebergees en Europe (Railway, Belgique).</p>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ───────────────────────────────────────────────── -->
+  <section id="faq" class="section">
+    <div class="container">
+      <span class="section-label">Questions frequentes</span>
+      <h2 class="section-title">Ce que vous voulez <em>vraiment savoir.</em></h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <p class="faq-q">Mon entreprise est-elle vraiment concernee par la CSRD ?</p>
+          <p class="faq-a">Si vous employez plus de 250 personnes, ou si vous depassez 50M€ de CA ou 25M€ de bilan, oui. <strong>Et si vous etes fournisseur d'une grande entreprise soumise a la CSRD, vous le serez indirectement aussi.</strong> La directive s'etend progressivement a partir de 2025.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Mes donnees sont-elles securisees ?</p>
+          <p class="faq-a">Vos documents sont heberges sur des serveurs europeens (Belgique) et <strong>ne sont jamais utilises pour entrainer des modeles d'IA.</strong> Chaque analyse est isolee. Nous sommes conformes au RGPD.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Le rapport remplace-t-il un cabinet conseil ?</p>
+          <p class="faq-a">ESG Optimizer produit un rapport de diagnostic professionnel base sur les standards officiels. <strong>Il remplace l'audit initial et le travail de structuration</strong>, qui representent 80% du cout d'un cabinet. Pour une certification officielle, un auditeur externe reste necessaire.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Quels formats de fichiers sont acceptes ?</p>
+          <p class="faq-a">PDF, Word (.docx), Excel (.xlsx) et les formats texte standard. Vous pouvez deposer votre rapport annuel, votre bilan RSE, ou tout document interne decrivant vos pratiques ESG. <strong>Plus vous deposez de documents, plus l'analyse est precise.</strong></p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Puis-je utiliser ESG Optimizer pour plusieurs entites ?</p>
+          <p class="faq-a">Le plan Essentiel couvre une entite. <strong>Pour les groupes, les cabinets ou les fonds</strong> qui ont besoin d'analyser plusieurs societes, contactez-nous pour un devis Pro/Enterprise avec gestion multi-portefeuille.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Comment l'IA est-elle calibree sur la CSRD ?</p>
+          <p class="faq-a">Nos prompts et criteres de scoring ont ete developpes en s'appuyant sur les textes officiels EFRAG et les standards ESRS publies par la Commission europeenne. <strong>Le modele est mis a jour regulierement</strong> avec les nouvelles interpretations reglementaires.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA FINAL ─────────────────────────────────────────── -->
+  <section id="cta-final">
+    <div class="container">
+      <div class="divider"></div>
+      <h2>
+        Votre premier rapport CSRD<br />
+        <em>en moins de 3 minutes.</em>
+      </h2>
+      <p>Rejoignez les PME qui ont choisi de se conformer intelligemment. Commencez gratuitement, sans carte bancaire.</p>
+      <div class="cta-actions">
+        <a href="https://esg-optimizer.fr" class="btn btn-primary" target="_blank" rel="noopener">
+          Analyser gratuitement
+        </a>
+        <a href="mailto:contact@strata-esg.fr" class="btn btn-outline">
+          Parler a l'equipe
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="text-decoration:none;">
+            <div class="stratemark" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="wordmark">STRATA</span>
+          </a>
+          <p>The operating system for sustainable business. ESG Intelligence Platform pour les PME europeennes soumises a la CSRD.</p>
+        </div>
+
+        <div>
+          <span class="footer-col-title">Produits</span>
+          <ul class="footer-links-list">
+            <li><a href="https://esg-optimizer.fr" target="_blank" rel="noopener">ESG Optimizer</a></li>
+            <li><a href="#" style="opacity:0.4;cursor:default;">STRATA Scope (Q3 2026)</a></li>
+            <li><a href="#" style="opacity:0.4;cursor:default;">STRATA Intel (2027)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-title">Ressources</span>
+          <ul class="footer-links-list">
+            <li><a href="#">Guide CSRD PME</a></li>
+            <li><a href="#">Standards ESRS</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Quick-check gratuit</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <span class="footer-col-title">Entreprise</span>
+          <ul class="footer-links-list">
+            <li><a href="mailto:contact@strata-esg.fr">Contact</a></li>
+            <li><a href="https://linkedin.com/company/strata-esg" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="#">Partenariats</a></li>
+          </ul>
+        </div>
       </div>
 
-    </main>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 STRATA. Paris, France. Tous droits reserves.</span>
+        <nav class="footer-legal">
+          <a href="#">Mentions legales</a>
+          <a href="#">CGV</a>
+          <a href="#">Politique de confidentialite</a>
+          <a href="#">RGPD</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-      <span class="footer-copy">© 2026 STRATA. Paris, France.</span>
-      <nav class="footer-links" aria-label="Liens footer">
-        <a href="mailto:contact@strata-esg.fr">Contact</a>
-        <a href="https://linkedin.com/company/strata-esg" target="_blank" rel="noopener">LinkedIn</a>
-      </nav>
-    </footer>
-
-  </div>
-
-  <script>
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('waitlist-form');
-      const success = document.getElementById('form-success');
-      const btn = form.querySelector('button');
-
-      btn.textContent = '...';
-      btn.disabled = true;
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          success.classList.add('visible');
-        } else {
-          btn.textContent = 'Erreur — Réessayer';
-          btn.disabled = false;
-        }
-      } catch {
-        btn.textContent = 'Erreur — Réessayer';
-        btn.disabled = false;
-      }
-    }
-  </script>
 </body>
 </html>
