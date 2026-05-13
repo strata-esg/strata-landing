@@ -6,7 +6,7 @@
   <title>STRATA — The operating system for sustainable business</title>
   <meta name="description" content="STRATA automatise votre conformité CSRD et votre reporting ESG. Analyse IA, scoring ESRS, rapport PDF en moins de 3 minutes. Pour les PME européennes." />
   <meta property="og:title" content="STRATA — ESG Intelligence Platform" />
-  <meta property="og:description" content="La conformité CSRD automatisée pour les PME. Ce que les cabinets facturent 30 000€, disponible pour 39€/mois." />
+  <meta property="og:description" content="La conformité CSRD automatisée pour les PME. Ce que les cabinets facturent 30 000€, disponible à partir de 39€ par analyse." />
   <meta property="og:image" content="https://strata-esg.fr/og-image.png" />
   <meta property="og:url" content="https://strata-esg.fr" />
   <meta property="og:type" content="website" />
@@ -705,7 +705,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
       margin-bottom: 40px;
     }
@@ -993,6 +993,15 @@
       margin: 0 auto 48px;
     }
 
+    /* ─── Tablette large ──────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+      .plan:nth-child(1) { border-radius: 8px 0 0 0; }
+      .plan:nth-child(2) { border-radius: 0 8px 0 0; }
+      .plan:nth-child(3) { border-radius: 0 0 0 8px; }
+      .plan:nth-child(4) { border-radius: 0 0 8px 0; }
+    }
+
     /* ─── Mobile ─────────────────────────────────────────────── */
     @media (max-width: 900px) {
       :root { --section-pad: 64px 0; }
@@ -1038,7 +1047,7 @@
         <li><a href="#pricing">Tarifs</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="https://esg-optimizer.fr" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
+      <a href="https://www.esg-optimizer.fr/" class="btn btn-primary nav-cta" target="_blank" rel="noopener">
         Essayer gratuitement
       </a>
     </div>
@@ -1061,11 +1070,11 @@
           </h1>
 
           <p class="hero-sub">
-            <strong>50 000 PME françaises</strong> doivent reporter leurs données ESG. Les cabinets facturent entre 5 000 et 30 000€ pour 4 à 6 semaines de travail. STRATA le fait en moins de 3 minutes, pour 39€/mois.
+            <strong>50 000 PME françaises</strong> doivent reporter leurs données ESG. Les cabinets facturent entre 5 000 et 30 000€ pour 4 à 6 semaines de travail. STRATA le fait en moins de 3 minutes, pour 39€ par analyse.
           </p>
 
           <div class="hero-actions">
-            <a href="https://esg-optimizer.fr" class="btn btn-primary" target="_blank" rel="noopener">
+            <a href="https://www.esg-optimizer.fr/" class="btn btn-primary" target="_blank" rel="noopener">
               Analyser mon rapport CSRD
             </a>
             <a href="#solution" class="btn btn-outline">
@@ -1073,7 +1082,7 @@
             </a>
           </div>
 
-          <p class="hero-proof">Gratuit pour les 3 premières analyses. Aucune carte requise.</p>
+          <p class="hero-proof">1 analyse gratuite pour tester. Aucune carte requise.</p>
         </div>
 
         <div class="hero-mockup" aria-hidden="true">
@@ -1122,7 +1131,7 @@
             <span class="trust-stat-label">PME concernees en France</span>
           </div>
           <div class="trust-stat">
-            <span class="trust-stat-number">12</span>
+            <span class="trust-stat-number">10</span>
             <span class="trust-stat-label">Standards ESRS analyses</span>
           </div>
           <div class="trust-stat">
@@ -1131,7 +1140,7 @@
           </div>
           <div class="trust-stat">
             <span class="trust-stat-number">39€</span>
-            <span class="trust-stat-label">Par mois vs 5-30k€ cabinet</span>
+            <span class="trust-stat-label">Par analyse vs 5-30k€ cabinet</span>
           </div>
         </div>
       </div>
@@ -1163,7 +1172,7 @@
           </div>
           <div class="problem-card">
             <span class="problem-card-icon">Complexite</span>
-            <h3>12 standards ESRS a maitriser</h3>
+            <h3>10 standards ESRS a maitriser</h3>
             <p>Le cadre reglementaire est dense, technique, et evolue constamment. Sans expert interne, impossible de s'y retrouver.</p>
           </div>
         </div>
@@ -1194,7 +1203,7 @@
           <span class="step-number">02</span>
           <div class="step-icon">🧠</div>
           <h3>L'IA analyse et score</h3>
-          <p>GPT-4o lit, structure et evalue votre contenu sur les 12 standards ESRS avec un scoring precis sur 100.</p>
+          <p>GPT-4o lit, structure et evalue votre contenu sur les 10 standards ESRS avec un scoring precis sur 100.</p>
           <div class="step-connector"></div>
         </div>
         <div class="step">
@@ -1216,7 +1225,7 @@
             <div class="result-metric-label">Pages de rapport</div>
           </div>
           <div class="result-metric">
-            <div class="result-metric-number">12</div>
+            <div class="result-metric-number">10</div>
             <div class="result-metric-label">Standards ESRS</div>
           </div>
           <div class="result-metric">
@@ -1249,8 +1258,8 @@
         </div>
         <div class="feature">
           <div class="feature-marker"></div>
-          <h3>Scoring ESRS sur 12 standards</h3>
-          <p>Evaluation granulaire sur chacun des 12 standards ESRS (E1 a E5, S1 a S4, G1). Identification precise des lacunes a combler.</p>
+          <h3>Scoring ESRS sur 10 standards</h3>
+          <p>Evaluation granulaire sur chacun des 10 standards ESRS (E1 a E5, S1 a S4, G1). Identification precise des lacunes a combler.</p>
         </div>
         <div class="feature">
           <div class="feature-marker"></div>
@@ -1292,14 +1301,14 @@
             <span class="plan-price-number">0€</span>
             <span class="plan-price-period">pour toujours</span>
           </div>
-          <p class="plan-desc">Testez la puissance d'ESG Optimizer sans engagement.</p>
+          <p class="plan-desc">Testez ESG Optimizer sans engagement ni carte bancaire.</p>
           <ul class="plan-features-list">
-            <li>3 analyses par mois</li>
-            <li>Scoring ESG global</li>
+            <li>1 analyse complete offerte</li>
+            <li>Scoring ESG global sur 100</li>
             <li><strong>Rapport PDF 8 pages</strong></li>
-            <li>Acces au quick-check public</li>
+            <li>Quick-check public (3/jour)</li>
           </ul>
-          <a href="https://esg-optimizer.fr" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">
+          <a href="https://www.esg-optimizer.fr/#quick-check" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">
             Commencer gratuitement
           </a>
         </div>
@@ -1309,35 +1318,53 @@
           <span class="plan-name">Essentiel</span>
           <div class="plan-price">
             <span class="plan-price-number">39€</span>
-            <span class="plan-price-period">/ mois</span>
+            <span class="plan-price-period">/ analyse</span>
           </div>
-          <p class="plan-desc">Pour les PME qui veulent une conformite CSRD continue et professionnelle.</p>
+          <p class="plan-desc">Une analyse complete, professionnelle, prete a presenter. Payez a l'usage.</p>
           <ul class="plan-features-list">
-            <li><strong>Analyses illimitees</strong></li>
-            <li>Scoring ESRS detaille (12 standards)</li>
+            <li><strong>1 analyse complete CSRD</strong></li>
+            <li>Scoring ESRS detaille (10 standards)</li>
             <li>Delta N/N-1 inclus</li>
-            <li>Badge LinkedIn</li>
-            <li>Historique complet</li>
-            <li>Support email prioritaire</li>
+            <li>Badge LinkedIn exportable</li>
+            <li>Historique et dashboard</li>
+            <li>Support email</li>
           </ul>
-          <a href="https://esg-optimizer.fr" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
-            Demarrer l'essai
+          <a href="https://www.esg-optimizer.fr/" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">
+            Lancer mon analyse
           </a>
         </div>
 
         <div class="plan">
-          <span class="plan-name">Pro / Enterprise</span>
+          <span class="plan-name">Pro</span>
+          <div class="plan-price">
+            <span class="plan-price-number">129€</span>
+            <span class="plan-price-period">/ mois</span>
+          </div>
+          <p class="plan-desc">Pour les equipes RSE et les PME en mode conformite continue.</p>
+          <ul class="plan-features-list">
+            <li><strong>Analyses illimitees</strong></li>
+            <li>Dashboard multi-periodes</li>
+            <li>Export complet des donnees</li>
+            <li>Badge LinkedIn premium</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <a href="https://www.esg-optimizer.fr/" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">
+            Choisir Pro
+          </a>
+        </div>
+
+        <div class="plan">
+          <span class="plan-name">Enterprise</span>
           <div class="plan-price">
             <span class="plan-price-number">Sur devis</span>
           </div>
-          <p class="plan-desc">Pour les cabinets, fonds, et ETI avec des besoins avances.</p>
+          <p class="plan-desc">Pour les cabinets, fonds et ETI avec des besoins avances.</p>
           <ul class="plan-features-list">
-            <li>Multi-entites</li>
+            <li>Multi-entites illimite</li>
             <li><strong>Marque blanche disponible</strong></li>
             <li>API access</li>
-            <li>Intégration ERP/SIRH</li>
-            <li>CSM dedie</li>
-            <li>SLA contractuel</li>
+            <li>Integration ERP/SIRH</li>
+            <li>CSM dedie + SLA</li>
           </ul>
           <a href="mailto:contact@strata-esg.fr" class="plan-cta plan-cta-outline">
             Nous contacter
@@ -1345,7 +1372,7 @@
         </div>
       </div>
 
-      <p class="pricing-note">Tous les prix sont HT. Annulation a tout moment. Donnees hebergees en Europe (Railway, Belgique).</p>
+      <p class="pricing-note">Tous les prix sont HT. Aucun abonnement force. Donnees hebergees en Europe (Railway, Belgique).</p>
     </div>
   </section>
 
@@ -1394,7 +1421,7 @@
       </h2>
       <p>Rejoignez les PME qui ont choisi de se conformer intelligemment. Commencez gratuitement, sans carte bancaire.</p>
       <div class="cta-actions">
-        <a href="https://esg-optimizer.fr" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://www.esg-optimizer.fr/" class="btn btn-primary" target="_blank" rel="noopener">
           Analyser gratuitement
         </a>
         <a href="mailto:contact@strata-esg.fr" class="btn btn-outline">
@@ -1421,7 +1448,7 @@
         <div>
           <span class="footer-col-title">Produits</span>
           <ul class="footer-links-list">
-            <li><a href="https://esg-optimizer.fr" target="_blank" rel="noopener">ESG Optimizer</a></li>
+            <li><a href="https://www.esg-optimizer.fr/" target="_blank" rel="noopener">ESG Optimizer</a></li>
             <li><a href="#" style="opacity:0.4;cursor:default;">STRATA Scope (Q3 2026)</a></li>
             <li><a href="#" style="opacity:0.4;cursor:default;">STRATA Intel (2027)</a></li>
           </ul>
@@ -1433,7 +1460,7 @@
             <li><a href="#">Guide CSRD PME</a></li>
             <li><a href="#">Standards ESRS</a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">Quick-check gratuit</a></li>
+            <li><a href="https://www.esg-optimizer.fr/#quick-check" target="_blank" rel="noopener">Quick-check gratuit</a></li>
           </ul>
         </div>
 
@@ -1441,7 +1468,7 @@
           <span class="footer-col-title">Entreprise</span>
           <ul class="footer-links-list">
             <li><a href="mailto:contact@strata-esg.fr">Contact</a></li>
-            <li><a href="https://linkedin.com/company/strata-esg" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/adama-diallo-rse" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="#">Partenariats</a></li>
           </ul>
         </div>
